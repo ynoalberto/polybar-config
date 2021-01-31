@@ -32,7 +32,6 @@
 ;background = ${xrdb:color0:#222}
 background = #000000
 background-alt = #000000
-:foreground = ${xrdb:color7:#000479}
 foreground = #dfdfdf
 foreground-alt = #555
 primary = #009cff
@@ -75,12 +74,12 @@ font-5 = JetBrainsMonoSmall:size=10;
 font-6 = Font Awesome 5 Free:style=Solid:size=10:
 modules-left = bspwm i3
 modules-center = xwindow
-modules-right = filesystem xbacklight  pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = filesystem xbacklight  pulseaudio xkeyboard memory cpu wlan  battery temperature date powermenu
 
 tray-position = right
 tray-padding = 2
 tray-transparent = true
-:tray-background = #000384
+tray-background = #000384
 
 
 
@@ -108,15 +107,15 @@ blacklist-0 = num lock
 
 format-prefix = "  "
 format-prefix-foreground = #FF0000
-:format-prefix-underline = ${colors.secondary}
+format-prefix-underline = ${colors.secondary}
 
 label-layout =%layout%
-:label-layout-underline = #FF0000
+label-layout-underline = #FF0000
 
 label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
-:label-indicator-underline = ${colors.secondary}
+label-indicator-underline = ${colors.secondary}
 
 [module/filesystem]
 type = internal/fs
@@ -228,7 +227,7 @@ type = internal/cpu
 interval = 2
 format-prefix = "  "
 format-prefix-foreground = #101A5E
-:format-underline = #f90000
+format-underline = #f90000
 label = %percentage:2%%
 
 [module/memory]
@@ -236,23 +235,23 @@ type = internal/memory
 interval = 2
 format-prefix = "  "
 format-prefix-foreground = #00A53F
-:format-underline = #4bffdc
+format-underline = #4bffdc
 label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlan0
+interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-:format-connected-underline = #9f78e1
+format-connected-underline = #9f78e1
 label-connected = %essid%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
-:label-disconnected-foreground = ${colors.foreground-alt}
+label-disconnected-foreground = ${colors.foreground-alt}
 
 ramp-signal-0 = 
 ramp-signal-1 = 
@@ -268,7 +267,7 @@ interval = 3.0
 
 format-connected-underline = #55aa55
 format-connected-prefix = ""
-:format-connected-prefix-foreground = ${colors.foreground-alt}
+format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
 format-disconnected =
@@ -289,7 +288,7 @@ time-alt = %H:%M:%S
 
 format-prefix = ﮮ
 format-prefix-foreground = #7895F7
-:format-underline = #0a6cf5
+format-underline = #0a6cf5
 
 label = %date% %time%
 
@@ -350,7 +349,7 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery
-battery = BAT0
+battery = BAT1
 adapter = AC
 full-at = 98
 
@@ -452,4 +451,3 @@ margin-bottom = 5
 [module/debian]
 type = custom/text
 content ="" 
-
